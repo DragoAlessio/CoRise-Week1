@@ -27,3 +27,10 @@ jobs:
       - name: Run tests
         run: |
           python -m pytest -v tests
+      - name: Check coverage
+        run: |
+          pytest --cov=calculator --cov-report "xml:coverage.xml"  tests/
+      - name: Write coverage comment
+        uses: DragoAlessio/CoRise-Week1@main
+        with:
+          pytest-xml-coverage-path: ./coverage.xml
