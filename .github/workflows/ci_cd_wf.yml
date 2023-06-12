@@ -31,6 +31,6 @@ jobs:
         run: |
           pytest --cov=calculator --cov-report "xml:coverage.xml"  tests/
       - name: Write coverage comment
-        uses: DragoAlessio/CoRise-Week1@main
+        uses: MishaKav/pytest-coverage-comment
         with:
           pytest-xml-coverage-path: ./coverage.xml
